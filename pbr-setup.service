@@ -1,0 +1,12 @@
+[Unit]
+Description=Policy-Based Routing for secondary Wi-Fi (wlan1)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/pbr-setup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
